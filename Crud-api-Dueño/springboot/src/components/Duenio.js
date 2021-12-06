@@ -21,15 +21,21 @@ export default function Duenio() {
         Axios.delete(`http://localhost:8080/duenio/del/${obj}`);
     }
     
-    const updateNum=(id)=>{
+    const updateNum=(id,nombre,direc,cant)=>{
         Axios.put("http://localhost:8080/duenio/updateNum",{
           idDuenio:id,
+          nombreDuenio:nombre,
+          cantMascotas:cant,
+          direccion:direc,
           numTelefono:numNew
         });
     }
-    const updateDirec=(id)=>{
+    const updateDirec=(id,nombre,num,cant)=>{
         Axios.put("http://localhost:8080/duenio/updateDirec",{
           idDuenio:id,
+          nombreDuenio:nombre,
+          numTelefono:num,
+          cantMascotas:cant,
           direccion:direcNew
         });
     }
@@ -103,10 +109,10 @@ export default function Duenio() {
                     Cant Mascotas: {duenio.cantMascotas}<br/>
                     
                     <input placeholder="Nuevo numero" type="text" onChange={(e)=>{setNumNew(e.target.value)}} />
-                    <button onClick={()=>{updateNum(duenio.idDuenio)}} >Update</button>
+                    <button onClick={()=>{updateNum(duenio.idDuenio,duenio.nombreDuenio,duenio.direccion,duenio.cantMascotas)}} >Update</button>
                     <Button variant="contained" color="error" onClick={()=>{deleteUsuario(duenio.idDuenio)}} >Borrar</Button>
                     <input placeholder="Nueva Dirección" type="text" onChange={(e)=>{setDirecNew(e.target.value)}} />
-                    <button onClick={()=>{updateDirec(duenio.idDuenio)}} >Update</button>
+                    <button onClick={()=>{updateDirec(duenio.idDuenio,duenio.nombreDuenio,duenio.numTelefono,duenio.cantMascotas)}} >Update</button>
 
                 </Paper>
             ))}
