@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Bd203426Application<BD203426>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "clasefonbon.BD203426.Bd203426Application",
+            "projectName": "BD203426",
+            "args": ""
+        }
+    ]
+}
